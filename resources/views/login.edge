@@ -1,0 +1,33 @@
+@layout('layout')
+@section('body')
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col m6 offset-m3">
+      <form action="/log-test" method="POST" >
+          {{ csrfField() }}
+        <div class="row ">
+            <div class="input-field col m12">
+                <input  type="text" class="validate" name="username">
+                <label for="last_name">UserName</label>
+            </div>
+          </div>
+          <div class="row">
+                <div class="input-field col m12">
+                  <input  type="password" class="validate" name="password">
+                  <label for="last_name">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Login
+
+             </button>
+            </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+@endsection

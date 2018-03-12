@@ -1,0 +1,46 @@
+@layout('layout')
+@section('body')
+<div class="container">
+  <br>
+  {{value}}
+  <h5 class="center-align">އެމްޕީ އެލް ގެ ޙިދުމަތާއި ބެހޭ</h5>
+<br>
+<div class="row">
+  <form >
+    <div class="row center-align" >
+   <label > <h5>މުޢާމަލާތު ކުރުން</h5> </label>
+   <div class="col s4">
+
+<img  class="grow" src="/image/Sad_Face_Emoji_large.png" alt="" width="100px" ng-click="comunicationNotwell()" >
+   </div>
+   <div class="col s4">
+     <img  class="grow"src="/image/normal_face.png" alt="" width="100px" ng-click = "comunicationOk()">
+   </div>
+   <div class="col s4">
+
+          <img  class="grow" src="/image/happy_face.png" alt="" width="100px" ng-click = "comunicationWell()">
+   </div>
+    </div>
+    <div class="row center-align" >
+
+   <label > <h5> ޙިދުމަތުގެ ފެންވަރު</h5> </label>
+
+   <div class="col s4">
+<img class="grow" src="/image/Sad_Face_Emoji_large.png" alt="" width="100px" ng-click = "serviceNotwell()">
+   </div>
+   <div class="col s4">
+     <img class="grow" src="/image/normal_face.png" alt="" width="100px" ng-click = "serviceOk()">
+   </div>
+   <div class="col s4">
+
+          <img class="grow" src="/image/happy_face.png" alt="" width="100px" ng-click = "serviceWell()">
+   </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+</div>
+@endsection

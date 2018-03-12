@@ -1,0 +1,63 @@
+@layout('layout')
+@section('body')
+<nav class="#26a69a teal lighten-1">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo ">Admin Panel</a>
+
+  </div>
+</nav>
+
+  <div class="row">
+
+  </div>
+
+
+<div class="row">
+
+  <div class="col m3">
+    <h5>Register User</h5>
+    <hr>
+    <br>
+    <form action="/register-department" method="POST">
+      {{ csrfField() }}
+      <div class="row">
+        <div class="input-field col m12">
+          <select name="department">
+                 <option value="" disabled selected>Choose department</option>
+                 <option value="Admin">Admin</option>
+                 <option value="Finace">Finace</option>
+                 <option value="Procument">Procument</option>
+                 <option value="Clearance">Clearance</option>
+                  <option value="Marine">Marine</option>
+           </select>
+            <label for="">Department</label>
+        </div>
+        <div class="row">
+          <div class="input-field col m12">
+            <input type="text" name="pass" value="">
+              <label for="">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" class="waves-effect waves-light btn" value="submit">
+        </div>
+
+      </div>
+      <div class="">
+
+      </div>
+    </form>
+    <br>
+    <a href="/logout" class="waves-effect waves-light btn">LOGOUT</a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $(function(){
+
+     $('select').material_select();
+  })
+</script>
+
+@endsection
