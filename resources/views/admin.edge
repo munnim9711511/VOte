@@ -50,14 +50,55 @@
     <br>
     <a href="/logout" class="waves-effect waves-light btn">LOGOUT</a>
   </div>
+
+<div class="" id="demo">
+
 </div>
+  <div class="col m8 offset-m1">
+    <h5>Service</h5>
+      <div id="myfirstchart" style="height: 250px;"></div>
+      <br>
+      <div class="row">
+          <h5>Communication</h5>
+        <div id="second" style="height: 250px;"></div>
+      </div>
+
+  </div>
 
 
 <script type="text/javascript">
   $(function(){
+    $('select').material_select();
 
-     $('select').material_select();
   })
+
+
+
+
+//-------------------------------------------------------------
+
+
+  // new Morris.Line({
+  // ID of the element in which to draw the chart.
+  // element: 'second',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  // data: [
+  //   { year: '2008', value: 20 },
+  //   { year: '2009', value: 10 },
+  //   { year: '2010', value: 5 },
+  //   { year: '2011', value: 5 },
+  //   { year: '2012', value: 20 }
+  // ],
+  // The name of the data record attribute that contains x-values.
+  // xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  // ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+//   labels: ['Value']
+// });
+
 </script>
 
 @endsection

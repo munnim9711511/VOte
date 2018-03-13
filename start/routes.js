@@ -19,8 +19,9 @@ Route.get('/','VoteController.logIn');
 Route.get('/login','VoteController.logIn');
 Route.get('/menu','VoteController.menuPanel');
 Route.get('/status','VoteController.statusDepartment');
-Route.get('/admin-panel','VoteController.adminPanel').middleware(['auth']);
+Route.get('/admin-panel','VoteController.adminPanel');
 Route.get('/logout','VoteController.logOut');
+Route.get('/get-procument-data','VoteController.getDepData');
 
 
 // Route.post('/test-validation','VoteController.testValidation');

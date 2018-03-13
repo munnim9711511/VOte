@@ -9,6 +9,7 @@ class CutomerCommentsSchema extends Schema {
       table.string("vote")
       table.string("department")
       table.string("service")
+      table.date('service_date');
       table.timestamps()
     })
   }
