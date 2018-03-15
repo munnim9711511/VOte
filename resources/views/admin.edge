@@ -1,15 +1,13 @@
 @layout('layout')
 @section('body')
-<nav class="#26a69a teal lighten-1">
+<nav class="#7e57c2 deep-purple lighten-1 z-depth-5">
   <div class="nav-wrapper">
     <a href="#" class="brand-logo ">Admin Panel</a>
 
   </div>
 </nav>
+<br>
 
-  <div class="row">
-
-  </div>
 
 
 <div class="row">
@@ -22,24 +20,23 @@
       {{ csrfField() }}
       <div class="row">
         <div class="input-field col m12">
-          <select name="department">
+          <select name="department" required>
                  <option value="" disabled selected>Choose department</option>
-                 <option value="Admin">Admin</option>
-                 <option value="Finace">Finace</option>
-                 <option value="Procument">Procument</option>
-                 <option value="Clearance">Clearance</option>
-                  <option value="Marine">Marine</option>
+                 <option value="Reception">Reception</option>
+                 <option value="Finace counter">Finace counter</option>
+                 <option value="Clearance counter">Clearance counter</option>
+
            </select>
             <label for="">Department</label>
         </div>
         <div class="row">
           <div class="input-field col m12">
-            <input type="text" name="pass" value="">
+            <input type="text" name="pass" value="" required>
               <label for="">Password</label>
           </div>
         </div>
         <div class="row">
-          <input type="submit" class="waves-effect waves-light btn" value="submit">
+          <input type="submit" class="waves-effect #f50057 pink accent-3 btn z-depth-5" value="submit">
         </div>
 
       </div>
@@ -48,19 +45,100 @@
       </div>
     </form>
     <br>
-    <a href="/logout" class="waves-effect waves-light btn">LOGOUT</a>
+    <a href="/logout" class="waves-effect #e040fb purple accent-2 btn z-depth-5">LOGOUT</a>
   </div>
 
 <div class="" id="demo">
 
 </div>
-  <div class="col m8 offset-m1">
-    <h5>Service</h5>
-      <div id="myfirstchart" style="height: 250px;"></div>
+  <div class="col m6 offset-m1 #bdbdbd grey lighten-1 z-depth-5">
+
+    <ng-view></ng-view>
+    <h5>Comunnication</h5>
+    <table  >
+  <thead class="#757575 grey darken-1">
+      <tr>
+          <th class="center-align">well communicated</th>
+          <th class="center-align">Need improving communicating</th>
+          <th class="center-align">Poor communicating</th>
+
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+        <td class="center-align">{{data[0]}}%</td>
+        <td class="center-align">{{data[1]}}%</td>
+        <td class="center-align">{{data[2]}}%</td>
+      </tr>
+
+  </tbody>
+</table>
       <br>
+      <hr>
       <div class="row">
-          <h5>Communication</h5>
-        <div id="second" style="height: 250px;"></div>
+          <h5>Service</h5>
+          <table >
+        <thead class="#757575 grey darken-1">
+            <tr>
+                <th class="center-align">well service provided</th>
+                <th class="center-align">Need improvement in service</th>
+                <th class="center-align">poor serviec provided</th>
+
+            </tr>
+         </thead>
+         <tbody >
+            <tr >
+              <td class="center-align">{{data[3]}}%</td>
+                <td class="center-align">{{data[4]}}%</td>
+                  <td class="center-align">{{data[5]}}%</td>
+            </tr>
+
+        </tbody>
+      </table>
+<br>
+  <h5>Select Department Status</h5>
+  <hr>
+  <br><br>
+      <div class="col m7">
+<form class="" action="get-department-statistic-data" method="post">
+  {{ csrfField() }}
+  <div class="row">
+    <div class="input-field">
+      <select name="dep" required>
+        <option value="" disabled selected>Choose department</option>
+        <option value="Reception">Reception</option>
+        <option value="Finace counter">Finace counter</option>
+        <option value="Clearance counter">Clearance counter</option>
+       </select>
+         <label for="">Department</label>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="input-field">
+         <label for="">Starting Date</label>
+         <br>
+      <input type="date" name="sdate" required>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="input-field">
+         <label for="">End Date</label>
+         <br>
+      <input type="date"  name="edate" required>
+
+    </div>
+
+  </div>
+  <div class="row">
+  <input type="submit" name="" value="Generate Data"  class="waves-effect waves-light btn">
+  </div>
+</div>
+</form>
+
+          @{{dataCount}}
       </div>
 
   </div>
@@ -69,6 +147,16 @@
 <script type="text/javascript">
   $(function(){
     $('select').material_select();
+
+    $('.datepicker').pickadate({
+   selectMonths: true, // Creates a dropdown to control month
+   selectYears: 15, // Creates a dropdown of 15 years to control year,
+   today: 'Today',
+   clear: 'Clear',
+   close: 'Ok',
+   closeOnSelect: false // Close upon selecting a date,
+ });
+
 
   })
 

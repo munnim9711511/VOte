@@ -21,10 +21,12 @@ Route.get('/menu','VoteController.menuPanel');
 Route.get('/status','VoteController.statusDepartment');
 Route.get('/admin-panel','VoteController.adminPanel');
 Route.get('/logout','VoteController.logOut');
-Route.get('/get-procument-data','VoteController.getDepData');
+
 
 
 // Route.post('/test-validation','VoteController.testValidation');
 Route.post('/vote-post','VoteController.voteDataEntry');
 Route.post('/register-department','VoteController.registerUsre');
 Route.post('/log-test','VoteController.validateUser');
+Route.post('/get-department-statistic','VoteController.getDepartmentStatistic');
+Route.post('/get-department-statistic-data','VoteController.getDepData');
