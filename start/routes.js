@@ -19,7 +19,7 @@ Route.get('/','VoteController.logIn');
 Route.get('/login','VoteController.logIn');
 Route.get('/menu','VoteController.menuPanel');
 Route.get('/status','VoteController.statusDepartment');
-Route.get('/admin-panel','VoteController.adminPanel');
+Route.get('/admin-panel','VoteController.adminPanel').middleware(['authRole']);
 Route.get('/logout','VoteController.logOut');
 
 

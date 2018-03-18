@@ -40,11 +40,18 @@ const user = use("App/Models/User");
 class VoteController {
 
   async logIn({view}){
+    const userRegistration = new user();
+
+    // userRegistration.username = "Admin";
+    // userRegistration.password = "welcome@mpl"
+    //
+    // userRegistration.save();
     return view.render('login');
 
   }
   async menuPanel({view}){
     return view.render('menu');
+
   }
 
   async voteDataEntry({request,auth}){
@@ -73,6 +80,7 @@ class VoteController {
   }
   async registerUsre({view,request,response}){
     const userRegistration = new user();
+
     userRegistration.username = request.input("department");
     userRegistration.password = request.input("pass");
 

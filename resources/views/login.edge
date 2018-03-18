@@ -2,20 +2,21 @@
 @section('body')
 <div class="container">
   <br><br>
+  <br><br>
   <div class="row">
-    <div class="col m6 offset-m3 z-depth-5 #bdbdbd grey lighten-2" id="logPanel">
+    <div class="col m6  col s12 offset-m3 z-depth-5 #bdbdbd grey lighten-2" id="logPanel">
       <br><br>
       <h5>Service </h5>
       <form action="/log-test" method="POST" >
           {{ csrfField() }}
         <div class="row ">
-            <div class="input-field col m12">
+            <div class="input-field col m12 col s12">
                 <input  type="text" class="validate" name="username">
                 <label for="last_name">UserName</label>
             </div>
           </div>
           <div class="row">
-                <div class="input-field col m12">
+                <div class="input-field col m12 col s12">
                   <input  type="password" class="validate" name="password">
                   <label for="last_name">Password</label>
               </div>
