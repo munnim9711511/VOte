@@ -202,7 +202,7 @@ const data = [
   percentPoorService
 
 ];
-return view.render("admin",{data});
+return view.render("report",{data});
 
   }
 

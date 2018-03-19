@@ -17,7 +17,7 @@ const Route = use('Route')
 
 Route.get('/','VoteController.logIn');
 Route.get('/login','VoteController.logIn');
-Route.get('/menu','VoteController.menuPanel');
+Route.get('/menu','VoteController.menuPanel').middleware(['auth'])
 Route.get('/status','VoteController.statusDepartment');
 Route.get('/admin-panel','VoteController.adminPanel').middleware(['authRole']);
 Route.get('/logout','VoteController.logOut');
